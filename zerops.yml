@@ -1,4 +1,4 @@
-runone:
+nodejs16runner:
   build:
     build:
       - curl -L https://github.com/drone-runners/drone-runner-exec/releases/latest/download/drone_runner_exec_linux_amd64.tar.gz | tar zx
