@@ -11,5 +11,5 @@ runone:
     deploy: 
       - ./drone-runner
   run:
-    start: ./drone-runner
+    start: ./drone-runner server
     
