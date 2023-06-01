@@ -1,0 +1,15 @@
+runone:
+  build:
+    base: 
+      - go@1
+    build:
+      - git clone https://github.com/harness/harness-docker-runner.git drone_runner_temp
+      - cd drone_runner_temp && git checkout v0.1.6
+      - cp -r drone_runner_temp/. .
+      - rm -rf drone_runner_temp
+      - go build -o drone-runner 
+    deploy: 
+      - ./drone-runner
+  run:
+    start: ./drone
+    
