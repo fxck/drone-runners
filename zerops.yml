@@ -8,5 +8,6 @@ runone:
   run:
     prepare:
       - sudo mkdir -p /etc/drone-runner-exec/config
+      - echo "inited"
     start: ./drone-runner-exec
     
