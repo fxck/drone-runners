@@ -10,5 +10,5 @@ runone:
       - sudo mkdir -p /etc/drone-runner-exec/config
     init:
       - ./drone-runner-exec service install || true
-    start: ./drone-runner-exec service start
+    start: ./drone-runner-exec
     
