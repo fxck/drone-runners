@@ -3,13 +3,12 @@ runone:
     base: 
       - go@1
     build:
-      - git clone https://github.com/harness/harness-docker-runner.git drone_runner_temp
-      - cd drone_runner_temp && git checkout v0.1.6
-      - cp -r drone_runner_temp/. .
-      - rm -rf drone_runner_temp
-      - go build -o drone-runner 
+      - curl -L https://github.com/drone-runners/drone-runner-exec/releases/latest/download/drone_runner_exec_linux_amd64.tar.gz | tar zx
+      - mkdir logs
     deploy: 
-      - ./drone-runner
+      - ./
   run:
-    start: ./drone-runner server
+    init:
+      - ./drone-runner-exec service install
+    start: ./drone-runner-exec service start
     
